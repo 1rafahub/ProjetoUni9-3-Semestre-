@@ -1,0 +1,92 @@
+.jss5
+{
+    top:0;
+    left:0;
+    width: 100vw;  
+    margin: 0 auto;
+    display: block;
+    position: fixed;
+    align-items: center;
+    font-family: CamptonLight;
+    border-bottom: 1px solid #d8d8d8;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    /* z-index: 20; */
+}
+/* 
+.sticky-top{
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: 1s;
+} */
+
+.img-logo {
+    height: 150px;
+    width: 250px;
+    object-fit: contain;
+   
+    
+}
+
+/* .nav-lista ul{
+    width: 100%;
+} */
+
+.navbar-nav li{
+margin-right: 20px;
+}
+.nav-item p{
+    color: #333333;
+
+}
+
+.nav-item a:hover{
+    color:#23c7ff;
+    text-decoration: underline solid;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+}
+
+.nav-item a:hover{
+    color:#23c7ff;
+    text-decoration: underline solid;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+}
+
+
+
+/* 
+.nav-route{
+    margin: 0 0.7em
+} */
+
+
+  
+  .botao-logout button{
+    padding: 10px;
+    border-radius: 30px;
+    background-color: #dc3545;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    border: none;
+    font-size: 15px;
+  
+  }
+
+  .btn-hover-logout:hover {
+    box-shadow: 3px 5px 5px #A9A9A9;
+    background-color: #FF9810;
+    color:white;
+    transform: scale(1.1);
+    transition: all 0.5s;
+  }
+  
