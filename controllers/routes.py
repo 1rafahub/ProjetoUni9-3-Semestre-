@@ -31,15 +31,21 @@ def contratar_servicos():
     servicos = []
     conn = connection_db()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM dbo.tb_user_services")
+    cursor.execute('''
+                    select tus.id_user_service, tus.id_type_service, tu.name, tu.email, tu.telephone, tus.activities, tus.hour_value from dbo.tb_user_services tus
+                    left join dbo.tb_user tu on tus.id_user = tu.id_user
+                    ''')
+
 
     for row in cursor.fetchall():
         servicos.append({
                         "id_user_service": row[0],
-                        "id_user": row[1],
-                        "id_type_service" : row[2],
-                        "activities": row[3],
-                        "hour_value" : row[4]
+                        "id_type_service" : row[1],
+                        "name" : row[2],
+                        "email" : row[3],
+                        "telephone" : row[4],
+                        "activities": row[5],
+                        "hour_value" : row[6]
                         })
 
     conn.close()

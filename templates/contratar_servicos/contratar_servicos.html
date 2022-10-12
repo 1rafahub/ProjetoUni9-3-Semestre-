@@ -1,5 +1,31 @@
 {% extends './master_layout/defaut.html' %}
 
 {% block body%}
-<h4 style="margin-top:150px;">{{servicos}}</h4>
+
+<div class="container corpo">
+<div class="table-responsive tabela-contatos">
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Atividades</th>
+              <th scope="col">Valor Hora</th>
+              <th scope="col">Contato</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+            {% for servicos in servicos %}
+              <th>{{servicos['name']}}</th>
+              <th>{{servicos['activities']}}</th>
+              <th>{{servicos['hour_value']}}</th>
+              <th><button class="btn btn-warning">Entrar em Contato</button></th>
+            {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+
 {% endblock %}

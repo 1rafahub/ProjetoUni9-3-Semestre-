@@ -42,19 +42,19 @@
 margin-right: 20px;
 }
 .nav-item p{
-    color: #333333;
+    color: #FFA500;
 
 }
 
 .nav-item a:hover{
-    color:#B2DFEE;
+    color:#FFA500;
     text-decoration: underline solid;
     text-underline-offset: 10px;
     text-decoration-thickness: 5px;
 }
 
 .nav-item a:hover{
-    color:#B2DFEE;
+    color:#FFA500;
     text-decoration: underline solid;
     text-underline-offset: 10px;
     text-decoration-thickness: 5px;
