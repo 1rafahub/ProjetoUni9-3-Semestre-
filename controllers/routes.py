@@ -32,8 +32,9 @@ def contratar_servicos():
     conn = connection_db()
     cursor = conn.cursor()
     cursor.execute('''
-                    select tus.id_user_service, tus.id_type_service, tu.name, tu.email, tu.telephone, tus.activities, tus.hour_value from dbo.tb_user_services tus
+                    select tus.id_user_service, tus.id_type_service, tts.title, tu.name, tu.email, tu.telephone, tus.activities, tus.hour_value from dbo.tb_user_services tus
                     left join dbo.tb_user tu on tus.id_user = tu.id_user
+                    left join dbo.tb_type_services tts on tus.id_type_service = tts.id_type_service
                     ''')
 
 
@@ -41,11 +42,12 @@ def contratar_servicos():
         servicos.append({
                         "id_user_service": row[0],
                         "id_type_service" : row[1],
-                        "name" : row[2],
-                        "email" : row[3],
-                        "telephone" : row[4],
-                        "activities": row[5],
-                        "hour_value" : row[6]
+                        "title" : row[2],
+                        "name" : row[3],
+                        "email" : row[4],
+                        "telephone" : row[5],
+                        "activities": row[6],
+                        "hour_value" : row[7]
                         })
 
     conn.close()
