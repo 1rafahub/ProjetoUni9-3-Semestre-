@@ -2,9 +2,10 @@ from flask import jsonify, render_template, redirect, session, url_for
 from config import app
 from connection import connection_db
 import requests
+import json
 
 
-@app.route("/home", methods = ['GET'])
+@app.route("/", methods = ['GET'])
 def home():
 
     dados = []
@@ -54,3 +55,10 @@ def contratar_servicos():
 
     return render_template("./contratar_servicos/contratar_servicos.html", servicos = servicos)
 
+@app.route("/contato")
+def contato():
+    return render_template("./contato/contato.html")
+
+@app.route("/sobre_nos")
+def sobre_nos():
+    return render_template("./sobre_nos/sobre_nos.html")

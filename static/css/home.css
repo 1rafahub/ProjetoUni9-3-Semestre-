@@ -28,6 +28,11 @@
     padding-bottom: 20px;
 }
 
+#text-home{
+    font-size: 20px;
+    justify-content: left;    
+}
+
 .circle-home{
     z-index: -1;
     position: absolute;
