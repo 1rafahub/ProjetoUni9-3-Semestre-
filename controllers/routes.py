@@ -4,6 +4,16 @@ from connection import connection_db
 import requests
 import json
 
+@app.errorhandler(404) 
+def not_found(e): 
+  
+  return render_template("./404/404.html") 
+
+@app.errorhandler(500) 
+def internal_error(e): 
+  
+  return render_template("./500/500.html") 
+
 
 @app.route("/", methods = ['GET'])
 def home():
@@ -59,6 +69,6 @@ def contratar_servicos():
 def contato():
     return render_template("./contato/contato.html")
 
-@app.route("/sobre_nos")
+@app.route("/sobrenos")
 def sobre_nos():
     return render_template("./sobre_nos/sobre_nos.html")
