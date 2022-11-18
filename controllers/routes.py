@@ -18,23 +18,7 @@ def internal_error(e):
 @app.route("/", methods = ['GET'])
 def home():
 
-    dados = []
-    conn = connection_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM dbo.tb_user")
-
-    for row in cursor.fetchall():
-        dados.append({
-            "id": row[0],
-            "id_user_type": row[1],
-            "name": row[2],
-            "email" : row[3],
-            "telephone": row[4]
-            })
-
-    conn.close()
-
-    return render_template("./home/home.html", dados = dados)
+    return render_template("./home/home.html")
 
 @app.route("/contratarservicos", methods = ['GET'])
 def contratar_servicos():
