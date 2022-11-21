@@ -1,4 +1,4 @@
-from flask import jsonify, render_template, redirect, session, url_for
+from flask import render_template
 from config import app
 from connection import connection_db
 import requests
