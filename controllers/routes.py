@@ -1,6 +1,7 @@
 from flask import render_template
 from config import app
 from connection import connection_db
+from .controller_type_services import get_eletricistas, get_faxineiros, get_pedreiros, get_pintores
 import requests
 import json
 
@@ -23,31 +24,21 @@ def home():
 @app.route("/contratarservicos", methods = ['GET'])
 def contratar_servicos():
 
-    servicos = []
-    conn = connection_db()
-    cursor = conn.cursor()
-    cursor.execute('''
-                    select tus.id_user_service, tus.id_type_service, tts.title, tu.name, tu.email, tu.telephone, tus.activities, tus.hour_value from dbo.tb_user_services tus
-                    left join dbo.tb_user tu on tus.id_user = tu.id_user
-                    left join dbo.tb_type_services tts on tus.id_type_service = tts.id_type_service
-                    ''')
+    eletricistas = get_eletricistas()
+
+    faxineiros = get_faxineiros()
+
+    pedreiros = get_pedreiros()
+
+    pintores = get_pintores()
 
 
-    for row in cursor.fetchall():
-        servicos.append({
-                        "id_user_service": row[0],
-                        "id_type_service" : row[1],
-                        "title" : row[2],
-                        "name" : row[3],
-                        "email" : row[4],
-                        "telephone" : row[5],
-                        "activities": row[6],
-                        "hour_value" : row[7]
-                        })
-
-    conn.close()
-
-    return render_template("./contratar_servicos/contratar_servicos.html", servicos = servicos)
+    return render_template("./contratar_servicos/contratar_servicos.html",
+    eletricistas = eletricistas, 
+    faxineiros = faxineiros,
+    pedreiros = pedreiros,
+    pintores = pintores
+    )
 
 @app.route("/contato")
 def contato():

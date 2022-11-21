@@ -13,53 +13,237 @@
     Aqui você encontra todas as informações dos nosso parceiros.<br>
     Procure pelo serviço desejado e caso goste do perfil, entre em contato já!
   </p>
-<div class="table-responsive tabela-contatos">
-    <table class="table">
-        <thead>
-            <tr>
-              <th scope="col">Nome</th>
-              <th scope="col">Tipo de Serviço</th>
-              <th scope="col">Valor Hora R$</th>
-              <th scope="col">Contato</th>
-            </tr>
-        </thead>
+  <div style="align-items: center;">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 
-        <tbody>
-            {% for servicos in servicos %}
-              <tr>
-                <th>{{servicos['name']}}</th>
-                <th>{{servicos['title']}}</th>
-                <th>{{servicos['hour_value']}}</th>
-                <th><button type="button"class="btn btn-warning" data-toggle="modal" data-target="#modal.{{servicos['id_user_service']}}">Entrar em Contato</button></th>
-              </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-eletricista-tab" data-toggle="pill" href="#pills-eletricista" role="tab" aria-controls="pills-eletricista" aria-selected="true">Eletricista(a)</a>
+      </li>
 
-<!-- Modal -->
-{% for servicos in servicos %}
-<div class="modal fade" id="modal.{{servicos['id_user_service']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLongTitle">Contato de {{servicos['name']}}</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Email: {{servicos['email']}}</p>
-        <p>Telefone: {{servicos['telephone']}}</p>
-        <p>Atividades: <br>{{servicos['activities']}}</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-faxineiro-tab" data-toggle="pill" href="#pills-faxineiro" role="tab" aria-controls="pills-faxineiro" aria-selected="false">Faxineiro(a)</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="pills-pedreiro-tab" data-toggle="pill" href="#pills-pedreiro" role="tab" aria-controls="pills-pedreiro" aria-selected="false">Pedreiro(a)</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="pills-pintor-tab" data-toggle="pill" href="#pills-pintor" role="tab" aria-controls="pills-pintor" aria-selected="false">Pintor(a)</a>
+      </li>
+
+    </ul>
+  </div>
+
+
+  <div class="tab-content" id="pills-tabContent">
+
+    <div class="tab-pane fade show active" id="pills-eletricista" role="tabpanel" aria-labelledby="pills-eletricista-tab">
+      <div class="table-responsive tabela-contatos">
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Tipo de Serviço</th>
+                  <th scope="col">Valor Hora R$</th>
+                  <th scope="col">Contato</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                {% for eletricistas in eletricistas %}
+                  <tr>
+                    <th>{{eletricistas['name']}}</th>
+                    <th>{{eletricistas['title']}}</th>
+                    <th>{{eletricistas['hour_value']}}</th>
+                    <th><button type="button"class="btn btn-warning" data-toggle="modal" data-target="#modal.{{eletricistas['id_user_service']}}">Entrar em Contato</button></th>
+                  </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+    <!-- Modal -->
+    {% for eletricistas in eletricistas %}
+    <div class="modal fade" id="modal.{{eletricistas['id_user_service']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLongTitle">Contato de {{eletricistas['name']}}</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Email: {{eletricistas['email']}}</p>
+            <p>Telefone: {{eletricistas['telephone']}}</p>
+            <p>Atividades: <br>{{eletricistas['activities']}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
+    {% endfor %}
+      </div>
+    
+    </div>
+
+    <div class="tab-pane fade" id="pills-faxineiro" role="tabpanel" aria-labelledby="pills-faxineiro-tab">
+
+      <div class="table-responsive tabela-contatos">
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Tipo de Serviço</th>
+                  <th scope="col">Valor Hora R$</th>
+                  <th scope="col">Contato</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                {% for faxineiros in faxineiros %}
+                  <tr>
+                    <th>{{faxineiros['name']}}</th>
+                    <th>{{faxineiros['title']}}</th>
+                    <th>{{faxineiros['hour_value']}}</th>
+                    <th><button type="button"class="btn btn-warning" data-toggle="modal" data-target="#modal.{{faxineiros['id_user_service']}}">Entrar em Contato</button></th>
+                  </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+    <!-- Modal -->
+    {% for faxineiros in faxineiros %}
+    <div class="modal fade" id="modal.{{faxineiros['id_user_service']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLongTitle">Contato de {{faxineiros['name']}}</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Email: {{faxineiros['email']}}</p>
+            <p>Telefone: {{faxineiros['telephone']}}</p>
+            <p>Atividades: <br>{{faxineiros['activities']}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+      </div>
+    
+    </div>
+
+    <div class="tab-pane fade" id="pills-pedreiro" role="tabpanel" aria-labelledby="pills-pedreiro-tab">
+
+      <div class="table-responsive tabela-contatos">
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Tipo de Serviço</th>
+                  <th scope="col">Valor Hora R$</th>
+                  <th scope="col">Contato</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                {% for pedreiros in pedreiros %}
+                  <tr>
+                    <th>{{pedreiros['name']}}</th>
+                    <th>{{pedreiros['title']}}</th>
+                    <th>{{pedreiros['hour_value']}}</th>
+                    <th><button type="button"class="btn btn-warning" data-toggle="modal" data-target="#modal.{{pedreiros['id_user_service']}}">Entrar em Contato</button></th>
+                  </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+    <!-- Modal -->
+    {% for pedreiros in pedreiros %}
+    <div class="modal fade" id="modal.{{pedreiros['id_user_service']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLongTitle">Contato de {{pedreiros['name']}}</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Email: {{pedreiros['email']}}</p>
+            <p>Telefone: {{pedreiros['telephone']}}</p>
+            <p>Atividades: <br>{{pedreiros['activities']}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="pills-pintor" role="tabpanel" aria-labelledby="pills-pintor-tab">
+            <div class="table-responsive tabela-contatos">
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Tipo de Serviço</th>
+                  <th scope="col">Valor Hora R$</th>
+                  <th scope="col">Contato</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                {% for pintores in pintores %}
+                  <tr>
+                    <th>{{pintores['name']}}</th>
+                    <th>{{pintores['title']}}</th>
+                    <th>{{pintores['hour_value']}}</th>
+                    <th><button type="button"class="btn btn-warning" data-toggle="modal" data-target="#modal.{{pintores['id_user_service']}}">Entrar em Contato</button></th>
+                  </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+    <!-- Modal -->
+    {% for pintores in pintores %}
+    <div class="modal fade" id="modal.{{pintores['id_user_service']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLongTitle">Contato de {{pintores['name']}}</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Email: {{pintores['email']}}</p>
+            <p>Telefone: {{pintores['telephone']}}</p>
+            <p>Atividades: <br>{{pintores['activities']}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+      </div>
+    </div>
+
   </div>
-</div>
-{% endfor %}
-  </div>
+
 </div>
 
 {% endblock %}

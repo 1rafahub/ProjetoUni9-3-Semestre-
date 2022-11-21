@@ -11,20 +11,8 @@
     flex-direction: column;
     justify-content: center;
     background-color: #ffffff;
-    /* z-index: 20; */
+ 
 }
-/* 
-.sticky-top{
-    position: fixed;
-    top: 0;
-    left:0;
-    width: 100%;
-    background: #fff;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    transition: 1s;
-} */
 
 .img-logo {
     height: 100px;
@@ -36,21 +24,15 @@
 .navbar-nav li{
 margin-right: 20px;
 }
-.nav-item p{
+.nav-route p{
     color: #FFA500;
 
 }
 
-.nav-item a:hover{
+.nav-route a:hover{
     color:#FFA500;
     text-decoration: underline solid;
     text-underline-offset: 10px;
     text-decoration-thickness: 5px;
 }
 
-.nav-item a:hover{
-    color:#FFA500;
-    text-decoration: underline solid;
-    text-underline-offset: 10px;
-    text-decoration-thickness: 5px;
-}
