@@ -25,22 +25,21 @@
         </thead>
 
         <tbody>
-            <tr>
             {% for servicos in servicos %}
-              <th>{{servicos['name']}}</th>
-              <th>{{servicos['title']}}</th>
-              <th>{{servicos['hour_value']}}</th>
-              <th><button type="button"class="btn btn-warning" data-toggle="modal" data-target="#modal.{{id_user_service}}">Entrar em Contato</button></th>
+              <tr>
+                <th>{{servicos['name']}}</th>
+                <th>{{servicos['title']}}</th>
+                <th>{{servicos['hour_value']}}</th>
+                <th><button type="button"class="btn btn-warning" data-toggle="modal" data-target="#modal.{{servicos['id_user_service']}}">Entrar em Contato</button></th>
+              </tr>
             {% endfor %}
-            </tr>
         </tbody>
     </table>
 
 <!-- Modal -->
-<div class="modal fade" id="modal.{{id_user_service}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+{% for servicos in servicos %}
+<div class="modal fade" id="modal.{{servicos['id_user_service']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    {% for servicos in servicos %}
-
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="exampleModalLongTitle">Contato de {{servicos['name']}}</h3>
@@ -57,9 +56,9 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
-    {% endfor %}
   </div>
 </div>
+{% endfor %}
   </div>
 </div>
 
